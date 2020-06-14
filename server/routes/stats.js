@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { db } = require('./../firebase');
 
-const router = new Router();
+const router = Router();
 
 // /stats/total Returns a stats-object with the total number of games (GET)
 router.get('/total', async (req, res) => {

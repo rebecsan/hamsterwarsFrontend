@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { db } = require('./../firebase');
 
-const router = new Router();
+const router = Router();
 
 // /charts/top Return the top 5 hamsters ordered by wins (GET)
 router.get('/top', async (req, res) => {
