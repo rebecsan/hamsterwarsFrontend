@@ -1,5 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, NavLink, Link} from 'react-router-dom'; // Redirect 
+import { BrowserRouter as Router, Switch, Route, NavLink, Link} from 'react-router-dom'; 
+
+
+// Todo:
+// Redirect
+// i router för ökad användarupplevelse
+
+
 import './App.css';
 import './components/UploadHamster';
 import Home from './components/Home';
@@ -7,11 +14,9 @@ import Battle from './components/Battle';
 import Matchup from './components/Matchup';
 import Stats from './components/Stats';
 import UploadHamster from './components/UploadHamster';
-// import AllHamsters from './components/AllHamsters';
+import AllHamsters from './components/AllHamsters';
 
 function App() {
-
-    // const [activeTab, setTab] = useState(1);
 
     return (
         <Router>
@@ -47,11 +52,21 @@ function App() {
                     <Route path='/upload'>
                         <UploadHamster/>
                     </Route>
+                    <Route path='/allhamsters'>
+                        <AllHamsters/>
+                    </Route>
                     <Route path='/'>
                         <Home/>
                     </Route>
                 </Switch>
             </main>
+            <footer>
+                <Switch>
+                    <Route path='/'>
+                        <p>Hamsterwars brought to you by rebecsan</p>
+                    </Route>
+                </Switch>
+            </footer>
         </Router>
     );
 }

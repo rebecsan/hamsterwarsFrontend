@@ -1,0 +1,23 @@
+form {
+    display: grid;
+    justify-items: center;
+}
+
+form > * {
+    grid-row: 60vw;
+    
+    
+}
+
+input {
+    margin: 0.2em 1em 1em 1em;
+    padding: 1em;
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 4px;
+    
+}
+
+button {
+    padding: 1em;;
+    margin: 1em;
+}

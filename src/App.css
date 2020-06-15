@@ -1,8 +1,16 @@
-.App {
-  text-align: center;
+body {
+    background-color:#96fbc4;
+    background-image: linear-gradient(to bottom right, #96fbc4 0% 65%, #f9f586 85% 100%);
+    box-sizing: border-box;
+    height: 100vh;
+    text-align: center;
 }
 
 /* Navigation */
 .active {
     background-color: teal;
+}
+
+img {
+    height: 30vh;
 }
