@@ -12,6 +12,7 @@ import './components/UploadHamster';
 import Home from './components/Home';
 import Battle from './components/Battle';
 import Matchup from './components/Matchup';
+import Splash from './components/Splash';
 import Stats from './components/Stats';
 import UploadHamster from './components/UploadHamster';
 import AllHamsters from './components/AllHamsters';
@@ -21,6 +22,7 @@ function App() {
     return (
         <Router>
             <Switch>
+                <Route path="/splash"> </Route>
                 <Route path='/'>
                     <header>
                         <Link to="/">
@@ -37,6 +39,7 @@ function App() {
             </Switch>
             <main>
                 <Switch>
+                    <Route path="/splash"> <Splash /> </Route>
                     <Route path='/battle/:id1/:id2'>
                         <Battle/>
                     </Route>
@@ -62,6 +65,7 @@ function App() {
             </main>
             <footer>
                 <Switch>
+                    <Route path="/splash"> </Route>
                     <Route path='/'>
                         <p>Hamsterwars brought to you by rebecsan</p>
                     </Route>

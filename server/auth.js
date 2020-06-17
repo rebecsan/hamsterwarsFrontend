@@ -2,7 +2,7 @@ let auth = (req, res, next) => {
 
     if (req.method !== 'GET') {
 
-        const key = process.env.KEY;
+        const key = process.env.REACT_APP_FIREBASE_KEY;
         
         if (key === req.headers['authorization']) {
             

@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
+const path = require('path');
 
 // Port assigned by Heroku (process.env.PORT) or 1234
 const serverPort = process.env.PORT || 1234;
@@ -31,6 +32,18 @@ app.use('/api/hamsters', hamstersRoute);
 
 const statsRoute = require('./routes/stats')
 app.use('/api/stats', statsRoute);
+
+const uploadRoute = require('./routes/upload')
+app.use('/api/upload', uploadRoute);
+
+// Make it possible to enter Heroku-app from another route than /
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../build/index.html'), function(err) {
+    if (err) {
+          res.status(500).send(err)
+        }
+    })
+})
 
 // Run server on serverPort
 app.listen(serverPort, () => {

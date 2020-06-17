@@ -1,0 +1,25 @@
+.cardContainer {
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 3em;
+    padding: 7em;
+    border: darkred 3px solid;
+    justify-content: space-around; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+    width: 70vw;
+    margin: auto;
+}
+
+.hamsterCard {
+    border: 1px solid grey;
+    padding: 2em;
+}
+
+.loadInfo {
+    display: flex;
+    border: 1px solid grey;
+    padding: 2em;
+}

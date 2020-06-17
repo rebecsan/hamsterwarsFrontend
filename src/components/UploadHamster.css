@@ -1,10 +1,11 @@
 form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-items: center;
 }
 
 form > * {
-    grid-row: 60vw;
+    flex: 1 1 auto;
     
     
 }

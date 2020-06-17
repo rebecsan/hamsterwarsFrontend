@@ -31,9 +31,10 @@ function fetchHamster() {
 
     return (
         <section> {hamster
-            ?   <><img alt={"Hamster "+hamster.id} src={`http://localhost:1234/api/assets/${hamster.imgName}`}></img>
+            ?   <><img alt={"Hamster "+ hamster.id} src={`http://localhost:1234/api/assets/${hamster.imgName}`}></img>
                 <p>{hamster.name}</p></>
-            : 'no hamster'} </p>
+            : 'no hamster'} 
+        </section>
     );
 
 }
