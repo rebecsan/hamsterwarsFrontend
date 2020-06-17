@@ -1,11 +1,10 @@
 export const fetchIdHamster = async (setHamster, hamsterId) => {
+    
     try {
         
         const url = '/api/hamsters/' + hamsterId;
         const response = await fetch(url);
-        //console.log('FetchIdHamster', await response.text())
         const json = await response.json();
-        //console.log('fetchIdHamster', json);
         setHamster({ 
             age: json.age,
             favFood: json.favFood,

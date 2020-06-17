@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 // import HamsterCard from "./HamsterCard";
-import {fetchHamster} from "./helpers/RandomHamster.js";
-import {fetchIdHamster} from "./helpers/IdHamster.js"
+import {fetchHamster} from "./helpers/randomHamster.js";
+import {fetchIdHamster} from "./helpers/idHamster.js"
 import './battle.css';
 import { useParams } from "react-router-dom";
 
 function Battle() {
 
-    const [hamster1, setHamster1] = useState(null);
-    const [hamster2, setHamster2] = useState(null);
+    const [hamster1, setHamster1] = useState({});
+    const [hamster2, setHamster2] = useState({});
     
     const params = useParams();
     // const [winner, setWinner] = useState(null);
@@ -18,14 +18,14 @@ function Battle() {
         async function getHamsters() {
 
             if(params.id1 && params.id2) {
-                console.log('Battle.useEffect, params=', params)
+                
                 fetchIdHamster(setHamster1, params.id1);
                 fetchIdHamster(setHamster2, params.id2);
 
             } else {
                 
-                fetchHamster(setHamster1);
-                fetchHamster(setHamster2);
+                await fetchHamster(setHamster1);
+                await fetchHamster(setHamster2, hamster1.id);
 
             }
 
@@ -33,6 +33,7 @@ function Battle() {
         
         getHamsters();
 
+    // eslint-disable-next-line
     }, [params])
 
     return (

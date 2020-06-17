@@ -19,7 +19,7 @@ router.get('/total', async (req, res) => {
             games.push(game.data())
         })
 
-        res.send(`${games.length} games have been played`);
+        res.send(`${games.length}`);
         
     } 
     catch (err) {

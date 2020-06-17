@@ -1,77 +1,41 @@
 import React, { useState, useEffect } from "react";
+import {fetchTotalGames, fetchTopHamsters, fetchBottomHamsters} from "./helpers/stats.js"
 
 function Stats() {
     
     const [totalGames, setTotalGames] = useState(null);
-    const [topFive, setTopFive] = useState(null);
-    const [bottomFive, setBottomFive] = useState(null);
+    const [topFive, setTopFive] = useState([]);
+    const [bottomFive, setBottomFive] = useState([]);
     
     useEffect(() => {
-
-        const fetchTotalGames = async () => {
             
-            try {
-                
-                const url = '/api/stats/total';
-                const response = await fetch(url);
-                // console.log('FetchStats:', await response.text())
-                const json = await response.json();
-                //console.log('fetchIdHamster', json);
-                setTotalGames(json);
-                console.log(json);
-                
-            } catch(e) {
-                
-                console.log('Fetching number of games failed because ', e)
-                
-            }
-        }
-
-        const fetchTopHamsters = async () => {
-            
-            try {
-                
-                const url = '/api/charts/top';
-                const response = await fetch(url);
-                const json = await response.json();
-                setTopFive(json);
-                console.log(json);
-                
-            } catch(e) {
-                
-                console.log('Fetching top 5 failed because ', e)
-                
-            }
-        }
-
-        const fetchBottomHamsters = async () => {
-            
-            try {
-                
-                const url = '/api/charts/bottom';
-                const response = await fetch(url);
-                const json = await response.json();
-                setTopFive(json);
-                console.log(json);
-                
-            } catch(e) {
-                
-                console.log('Fetching top 5 failed because ', e)
-                
-            }
-        }
-        
-        fetchTotalGames();
-        fetchTopHamsters();
-        fetchBottomHamsters();
+            fetchTotalGames(setTotalGames);
+            fetchTopHamsters(setTopFive);
+            fetchBottomHamsters(setBottomFive);
 
     },[])
     
     return (
         <>
             <h2>Stats</h2>
-            <p>Totala antalet matcher: {totalGames}</p>
-            {/* <p>Topp fem: {topFive}</p> */}
+            <h3>Total number of games:</h3>
+            <p>{totalGames}</p>
+            <section>
+                <h3>Most wins</h3>
+                <ol>
+                    {topFive.map((topHamster) => (
+                        <li key={topHamster.id}>{topHamster.name}: {topHamster.wins}</li>
+                    ))}
+                </ol>
+            </section>
+            <section>
+                <h3>Most defeats</h3>
+                <ol>
+                    {bottomFive.map((bottomHamster) => (
+                        <li key={bottomHamster.id}>{bottomHamster.name}: {bottomHamster.defeats}</li>
+                    ))}
+                </ol>
+            </section>
         </>
     )
 

@@ -1,40 +1,27 @@
-export const fetchHamster = async (setHamster) => {
+export const fetchHamster = async (setHamster, hamster1Id) => {
+    
     try {
         
         const url = '/api/hamsters/random';
-        const response = await fetch(url);
-        //console.log('FetchHamster', await response.text())
-        const json = await response.json();
-        //console.log('fetchHamster', json);
-        setHamster({ 
-            age: json.age,
-            favFood: json.favFood,
-            id: json.id,
-            imgName: json.imgName,
-            wins: json.wins,
-            defeats: json.defeats,
-            games: json.games,
-            loves: json.loves,
-            name: json.name
-        });
+        let json = {};
 
-        // while (hamster1Id === json.id) {
-        //     console.log('Hämtar ny hamster');
-        //     const response = await fetch(url);
-        //     const json = await response.json();
-        //     console.log('Sparar ny random hamster2 ' + json.name);
-        //     setHamster({ 
-        //         age: json.age,
-        //         favFood: json.favFood,
-        //         id: json.id,
-        //         imgName: json.imgName,
-        //         wins: json.wins,
-        //         defeats: json.defeats,
-        //         games: json.games,
-        //         loves: json.loves,
-        //         name: json.name
-        //     });
-        // }
+        do {
+
+            const response = await fetch(url);
+            json = await response.json();
+            await setHamster({ 
+                age: json.age,
+                favFood: json.favFood,
+                id: json.id,
+                imgName: json.imgName,
+                wins: json.wins,
+                defeats: json.defeats,
+                games: json.games,
+                loves: json.loves,
+                name: json.name
+            });
+
+        } while (hamster1Id === json.id)
 
     } catch(e) {
         
