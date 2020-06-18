@@ -12,7 +12,7 @@ function Battle() {
     const [hamster2, setHamster2] = useState({});
     
     const params = useParams();
-    const [winner, setWinner] = useState({});
+    // const [winner, setWinner] = useState({});
     // const [loser, setLoser] = useState({});
 
     useEffect(() => {
@@ -35,8 +35,8 @@ function Battle() {
         
         getHamsters();
 
-    // eslint-disable-next-line
-    }, [params])
+
+    }, [params, hamster1])
 
     return (
         <>
