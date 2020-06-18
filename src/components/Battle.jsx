@@ -45,11 +45,11 @@ function Battle() {
             {hamster1.id && hamster2.id
             ? <><section 
                     className="hamsterCard"
-                    onClick={() => {handleWinnerClick(hamster1, hamster2)}}>
+                    onClick={() => (handleWinnerClick(hamster1, hamster2))}>
                 <img alt={"Hamster "+ hamster1.id} src={`/api/assets/${hamster1.imgName}`}></img>
                 <p>{hamster1.name}</p>
             </section>
-            <section className="hamsterCard" onClick={() => handleWinnerClick(hamster2, hamster1)}>
+            <section className="hamsterCard" onClick={() => (handleWinnerClick(hamster2, hamster1))}>
                 <img alt={"Hamster "+ hamster2.id} src={`/api/assets/${hamster2.imgName}`}></img>
                 <p>{hamster2.name}</p>
             </section></>
