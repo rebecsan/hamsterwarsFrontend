@@ -3,6 +3,16 @@ body {
     /* background-image: linear-gradient(to bottom right, #7661BC 0% 65%, #9558B7 85% 100%); */
     background-color: #C8BDED;
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 100%;
     text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 1em 2em 3em 2em;
 }

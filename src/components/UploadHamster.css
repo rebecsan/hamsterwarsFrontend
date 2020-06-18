@@ -1,24 +1,46 @@
 form {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-}
-
-form > * {
-    flex: 1 1 auto;
-    
-    
+    max-width: 60vw;
+    margin: auto;
 }
 
 input {
     margin: 0.2em 1em 1em 1em;
-    padding: 1em;
+    padding: 0.5em;
     border: 1px solid rgb(117, 117, 117);
     border-radius: 4px;
-    
 }
 
 button {
     padding: 1em;;
     margin: 1em;
+}
+
+.form-group {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+.form-group label {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.form-group input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+input.valid {
+    border: 1px solid #5BBE36;
+    border-radius: 2px;
+}
+input.invalid {
+    border: 1px solid #DD2626;
+    border-radius: 2px;
+}
+.error {
+    color: #DD2626;
+    position: absolute;
 }

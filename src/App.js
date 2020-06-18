@@ -46,7 +46,7 @@ function App() {
                     <Route path='/battle'>
                         <Battle/>
                     </Route>
-                    <Route path='/matchup/:gameid'>
+                    <Route path='/matchup/:id/:id2'>
                         <Matchup/>
                     </Route>
                     <Route path='/stats'>
