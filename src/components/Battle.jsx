@@ -35,8 +35,8 @@ function Battle() {
         
         getHamsters();
 
-
-    }, [params, hamster1.id])
+    // eslint-disable-next-line
+    }, [params])
 
     return (
         <>

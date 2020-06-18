@@ -25,3 +25,4 @@ export const postNewGame = async (winner, loser) => {
         return null;
 
     }
+}
