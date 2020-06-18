@@ -27,7 +27,7 @@ function Battle() {
             } else {
                 
                 await fetchHamster(setHamster1);
-                await fetchHamster(setHamster2, hamster1);
+                await fetchHamster(setHamster2, hamster1.id);
 
             }
 
@@ -36,7 +36,7 @@ function Battle() {
         getHamsters();
 
 
-    }, [params, hamster1])
+    }, [params, hamster1.id])
 
     return (
         <>

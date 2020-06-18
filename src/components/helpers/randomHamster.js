@@ -1,4 +1,4 @@
-export const fetchHamster = async (setHamster, hamster1) => {
+export const fetchHamster = async (setHamster, hamster1id) => {
     
     try {
         
@@ -6,7 +6,7 @@ export const fetchHamster = async (setHamster, hamster1) => {
         let json = {};
 
         do {
-            console.log('fetchHamster, hamster1Id', hamster1.id);
+            
             const response = await fetch(url);
             json = await response.json();
             await setHamster({ 
@@ -21,7 +21,7 @@ export const fetchHamster = async (setHamster, hamster1) => {
                 name: json.name
             });
 
-        } while (hamster1.id === json.id)
+        } while (hamster1id === json.id);
 
     } catch(e) {
         
