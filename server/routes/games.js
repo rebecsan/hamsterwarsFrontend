@@ -54,7 +54,7 @@ router.post('/', async (req, res) => {
         .doc()
         .set(game);
 
-        res.status(201).send({msg: 'Game data uploaded to database'})
+        res.status(201).send(game)
 
     }
     catch(err) {

@@ -14,7 +14,6 @@ export const postNewGame = async (winner, loser) => {
 
     try{
         const response = await fetch('/api/games', requestOptions);
-        console.log('game response', response);
         const data = await response.json();
         console.log('game data', data);
         return data;
