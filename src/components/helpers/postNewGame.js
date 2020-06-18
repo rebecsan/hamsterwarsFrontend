@@ -1,4 +1,4 @@
-export const postNewGame = (winner, loser) => {
+export const postNewGame = async (winner, loser) => {
 
     const requestOptions = {
         method: 'POST',
