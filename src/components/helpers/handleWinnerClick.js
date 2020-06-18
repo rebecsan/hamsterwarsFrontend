@@ -9,7 +9,7 @@ export const handleWinnerClick = async (winner, loser) => {
             body: JSON.stringify({
                 'wins': 1
             })
-        });
+        }); await responseWinner.text()
 
         const responseLoser = await fetch('/api/hamsters/' + loser.id + 'result', {
             method: 'PUT',
@@ -17,7 +17,7 @@ export const handleWinnerClick = async (winner, loser) => {
             body: JSON.stringify({
                 'defeats': 1
             })
-        });
+        }); await responseLoser.text()
 
         const winnerData = await responseWinner.json();
         const loserData = await responseLoser.json();
