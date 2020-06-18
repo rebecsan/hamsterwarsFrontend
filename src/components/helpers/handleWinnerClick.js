@@ -3,7 +3,7 @@ export const handleWinnerClick = async (winner, loser) => {
 
     try{
         
-        const responseWinner = await fetch('/api/hamsters/' + winner.id + 'result', {
+        const responseWinner = await fetch('/api/hamsters/' + winner.id + '/result', {
             method: 'PUT',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'authorization': process.env.REACT_APP_FIREBASE_KEY},
             body: JSON.stringify({
@@ -11,14 +11,14 @@ export const handleWinnerClick = async (winner, loser) => {
             })
         });
 
-        const responseLoser = await fetch('/api/hamsters/' + loser.id + 'result', {
+        const responseLoser = await fetch('/api/hamsters/' + loser.id + '/result', {
             method: 'PUT',
             headers: {'Accept': 'application/json', 'Content-Type': 'application/json', 'authorization': process.env.REACT_APP_FIREBASE_KEY},
             body: JSON.stringify({
                 'defeats': 1
             })
         });
-        
+
         const winnerData = await responseWinner.json();
         const loserData = await responseLoser.json();
 
