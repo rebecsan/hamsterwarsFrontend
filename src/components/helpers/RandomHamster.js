@@ -6,7 +6,7 @@ export const fetchHamster = async (setHamster, hamster1Id) => {
         let json = {};
 
         do {
-
+            console.log('fetchHamster, hamster1Id', hamster1Id);
             const response = await fetch(url);
             json = await response.json();
             await setHamster({ 

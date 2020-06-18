@@ -19,7 +19,8 @@ const auth = require('./auth')
 app.use(auth);
 
 // ROUTES
-app.use('/api/assets', express.static('hamsters'));
+// Get images
+app.use('/api/assets', express.static(__dirname + '/../server/hamsters'));
 
 const chartsRoute = require('./routes/charts')
 app.use('/api/charts', chartsRoute);

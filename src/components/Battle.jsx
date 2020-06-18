@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 // import HamsterCard from "./HamsterCard";
+import { useParams } from "react-router-dom";
 import {fetchHamster} from "./helpers/randomHamster.js";
 import {fetchIdHamster} from "./helpers/idHamster.js"
+import {handleWinnerClick} from "./helpers/handleWinnerClick.js"
 import './battle.css';
-import { useParams } from "react-router-dom";
 
 function Battle() {
 
@@ -11,7 +12,8 @@ function Battle() {
     const [hamster2, setHamster2] = useState({});
     
     const params = useParams();
-    // const [winner, setWinner] = useState(null);
+    const [winner, setWinner] = useState({});
+    // const [loser, setLoser] = useState({});
 
     useEffect(() => {
 
@@ -40,13 +42,15 @@ function Battle() {
         <>
         <h2>Battle</h2>
         <article className="cardContainer"> 
-            {hamster1 && hamster2
-            ? <><section className="hamsterCard">
-                <img alt={"Hamster "+ hamster1.id} src={`http://localhost:1234/api/assets/${hamster1.imgName}`}></img>
+            {hamster1.id && hamster2.id
+            ? <><section 
+                    className="hamsterCard"
+                    onClick={() => {handleWinnerClick(hamster1, hamster2)}}>
+                <img alt={"Hamster "+ hamster1.id} src={`/api/assets/${hamster1.imgName}`}></img>
                 <p>{hamster1.name}</p>
             </section>
-            <section className="hamsterCard">
-                <img alt={"Hamster "+ hamster2.id} src={`http://localhost:1234/api/assets/${hamster2.imgName}`}></img>
+            <section className="hamsterCard" onClick={() => handleWinnerClick(hamster2, hamster1)}>
+                <img alt={"Hamster "+ hamster2.id} src={`/api/assets/${hamster2.imgName}`}></img>
                 <p>{hamster2.name}</p>
             </section></>
             : <><section className="loadInfo">

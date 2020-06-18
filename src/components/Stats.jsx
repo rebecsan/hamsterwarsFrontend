@@ -18,8 +18,10 @@ function Stats() {
     return (
         <>
             <h2>Stats</h2>
-            <h3>Total number of games:</h3>
-            <p>{totalGames}</p>
+            <section>
+                <h3>Total number of games played:</h3>
+                <p>{totalGames}</p>
+            </section>
             <section>
                 <h3>Most wins</h3>
                 <ol>
