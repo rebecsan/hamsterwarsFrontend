@@ -25,14 +25,14 @@ function App() {
                 <Route path="/splash"> </Route>
                 <Route path='/'>
                     <header>
-                        <Link to="/">
+                        <Link to="/" className="heading">
                             <h1>Hamsterwars</h1>
                         </Link>
                         <nav>
                             {/* <NavLink to="/" activeClassName="active"> Home </NavLink> */}
-                            <NavLink to="/battle" activeClassName="active"> Battle </NavLink>
-                            <NavLink to="/stats" activeClassName="active"> Stats </NavLink>
-                            <NavLink to="/upload" activeClassName="active"> Upload hamster </NavLink>
+                            <NavLink to="/battle" className="navLink" activeClassName="active"> Battle </NavLink>
+                            <NavLink to="/stats" className="navLink" activeClassName="active"> Stats </NavLink>
+                            <NavLink to="/upload" className="navLink" activeClassName="active"> Upload hamster </NavLink>
                         </nav>
                     </header>
                 </Route>

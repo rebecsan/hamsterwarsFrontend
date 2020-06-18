@@ -1,16 +1,58 @@
-body {
-    background-color:#96fbc4;
-    background-image: linear-gradient(to bottom right, #96fbc4 0% 65%, #f9f586 85% 100%);
-    box-sizing: border-box;
-    height: 100vh;
-    text-align: center;
-}
+
 
 /* Navigation */
 .active {
-    background-color: teal;
+    background-color: #C8BDED;
+    color: rgb(14, 1, 22);
+}
+
+header {
+    background-color: #5942A4;
+    color: honeydew;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1em;
+    height: 12vh;
+}
+
+header .navLink {
+    padding: 0.2em;
+    font-size: 1.2em;
+}
+
+.heading {
+    font-size: 3em;
+    margin-bottom: 0.5em;
 }
 
 img {
     height: 30vh;
+}
+
+.navLink:link, .heading:link {
+    text-decoration: none;
+}
+
+.navLink:visited, .heading:visited {
+    text-decoration: none;
+    color: honeydew;
+}
+
+.navLink:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.heading:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navLink:active, .heading:active {
+    text-decoration: none;
+}
+
+main {
+    padding: 1em;
 }
