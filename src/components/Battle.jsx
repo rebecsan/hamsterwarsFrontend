@@ -27,7 +27,7 @@ function Battle() {
             } else {
                 
                 await fetchHamster(setHamster1);
-                await fetchHamster(setHamster2, hamster1.id);
+                await fetchHamster(setHamster2, hamster1id);
 
             }
 
